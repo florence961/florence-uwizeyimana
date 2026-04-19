@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login – Education App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css"/>
+</head>
+<body class="auth-body">
+  <div class="auth-header"></div>
+
+  <div class="auth-content">
+    <h1 class="auth-title center">login</h1>
+
+    <form class="auth-form" id="login-form" novalidate>
+      <input class="auth-input" type="email" id="login-email" placeholder="enter email" autocomplete="email"/>
+      <input class="auth-input" type="password" id="login-password" placeholder="enter password" autocomplete="current-password"/>
+      <div class="error-msg" id="login-error"></div>
+      <button class="auth-btn btn-blue" type="submit">login</button>
+    </form>
+
+    <div class="auth-footer-row" style="margin-top:24px;">
+      <span>create new acount</span>
+      <a href="signup.html" class="signup-link-btn">signup</a>
+    </div>
+  </div>
+
+  <footer class="app-footer">
+    <div class="footer-social">
+      <a href="https://facebook.com/educationapp12" target="_blank" class="social-item" title="Facebook">
+        <i class="fab fa-facebook-f social-icon"></i>
+        <span class="social-label">educationapp12</span>
+      </a>
+      <a href="https://twitter.com/educationapp12" target="_blank" class="social-item" title="Twitter">
+        <i class="fab fa-twitter social-icon"></i>
+        <span class="social-label">educationapp12</span>
+      </a>
+      <a href="https://instagram.com/educationapp12" target="_blank" class="social-item" title="Instagram">
+        <i class="fab fa-instagram social-icon"></i>
+        <span class="social-label">educationapp12</span>
+      </a>
+      <a href="https://linkedin.com/company/educationapp" target="_blank" class="social-item" title="LinkedIn">
+        <i class="fab fa-linkedin-in social-icon"></i>
+        <span class="social-label">educationapp</span>
+      </a>
+    </div>
+  </footer>
+  <script src="../js/auth.js"></script>
+</body>
+</html>
