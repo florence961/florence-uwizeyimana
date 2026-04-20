@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up – Education App</title>
+  <link rel="stylesheet" href="../css/styles.css"/>
+</head>
+<body class="auth-body" style="background:var(--bg-light);">
+  <div class="auth-header"></div>
+
+  <div class="auth-content">
+    <h1 class="auth-title" style="color:var(--green-title);font-size:1.4rem;text-align:left;margin-bottom:28px;">create new account</h1>
+
+    <form class="auth-form" id="signup-form" novalidate>
+      <input class="auth-input" type="email" id="signup-email" placeholder="enter email" autocomplete="email"/>
+      <input class="auth-input" type="tel" id="signup-phone" placeholder="enter phone number" autocomplete="tel"/>
+      <input class="auth-input" type="text" id="signup-name" placeholder="enter your name" autocomplete="name"/>
+      <input class="auth-input" type="password" id="signup-password" placeholder="enter your password" autocomplete="new-password"/>
+      <div class="error-msg" id="signup-error"></div>
+      <div class="success-msg" id="signup-success"></div>
+      <button class="auth-btn btn-teal" type="submit">create</button>
+    </form>
+
+    <div style="margin-top:16px;text-align:center;font-size:0.85rem;">
+      Already have an account? <a href="login.html" style="color:var(--sky-dark);font-weight:700;">login</a>
+    </div>
+  </div>
+
+  <div class="auth-header" style="margin-top:auto;"></div>
+  <script src="../js/auth.js"></script>
+</body>
+</html>

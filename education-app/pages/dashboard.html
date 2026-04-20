@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard – Education App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css"/>
+</head>
+<body class="dash-body">
+
+  <header class="dash-header">
+    <div class="logo-row">
+      <span style="font-size:1.6rem;">🎓</span>
+      <h1>Education App</h1>
+    </div>
+    <div class="dash-actions">
+      <a href="profile.html">Profile</a>
+      <a href="courses.html">Courses</a>
+      <a href="#" id="logout-btn">Logout</a>
+    </div>
+  </header>
+
+  <div class="dash-content">
+    <div class="welcome-banner">
+      <h2>Welcome back, <span id="user-name-display">Student</span>! 👋</h2>
+      <p>Continue your learning journey today.</p>
+    </div>
+
+    <div class="dash-grid">
+      <div class="dash-card">
+        <span class="card-icon">📚</span>
+        <span class="card-label">Enrolled Courses</span>
+        <span class="card-value" id="enrolled-count">0</span>
+      </div>
+      <div class="dash-card">
+        <span class="card-icon">🏆</span>
+        <span class="card-label">Achievements</span>
+        <span class="card-value">–</span>
+      </div>
+      <div class="dash-card">
+        <span class="card-icon">📅</span>
+        <span class="card-label">Days Active</span>
+        <span class="card-value">1</span>
+      </div>
+      <div class="dash-card">
+        <span class="card-icon">⭐</span>
+        <span class="card-label">Points</span>
+        <span class="card-value">0</span>
+      </div>
+    </div>
+
+    <div class="section-heading">My Enrolled Courses</div>
+    <div id="enrolled-list"></div>
+
+    <div style="text-align:center;margin-top:24px;">
+      <a href="courses.html" class="menu-btn" style="display:inline-block;padding:14px 32px;font-size:0.95rem;">Browse All Courses →</a>
+    </div>
+  </div>
+
+  <footer class="dash-footer">
+    <div class="footer-content">
+      <div class="footer-app-name">Education App</div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/educationapp12" class="social-item" target="_blank">
+          <i class="fab fa-facebook-f social-icon"></i>
+          <span class="social-label">Facebook</span>
+        </a>
+        <div class="footer-divider"></div>
+        <a href="https://twitter.com/educationapp12" class="social-item" target="_blank">
+          <i class="fab fa-twitter social-icon"></i>
+          <span class="social-label">Twitter</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/auth.js"></script>
+  <script src="../js/courses.js"></script>
+  <script>
+    // Redirect if not logged in
+    document.addEventListener('DOMContentLoaded', () => {
+      const session = JSON.parse(sessionStorage.getItem('edu_user') || 'null');
+      if (!session) window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>

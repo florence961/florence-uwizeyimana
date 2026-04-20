@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login – Education App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css"/>
+</head>
+<body class="auth-body">
+  <div class="auth-header"></div>
+
+  <div class="auth-content">
+    <h1 class="auth-title center">login</h1>
+
+    <form class="auth-form" id="login-form" novalidate>
+      <input class="auth-input" type="email" id="login-email" placeholder="enter email" autocomplete="email"/>
+      <input class="auth-input" type="password" id="login-password" placeholder="enter password" autocomplete="current-password"/>
+      <div class="error-msg" id="login-error"></div>
+      <button class="auth-btn btn-blue" type="submit">login</button>
+    </form>
+
+    <div class="auth-footer-row" style="margin-top:24px;">
+      <span>create new acount</span>
+      <a href="signup.html" class="signup-link-btn">signup</a>
+    </div>
+  </div>
+
+  <div class="auth-header" style="margin-top:auto;"></div>
+  <script src="../js/auth.js"></script>
+</body>
+</html>

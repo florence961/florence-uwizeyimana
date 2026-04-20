@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile – Education App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css"/>
+</head>
+<body class="profile-body">
+  <header class="dash-header">
+    <div class="logo-row">
+      <span style="font-size:1.6rem;">🎓</span>
+      <h1>My Profile</h1>
+    </div>
+    <div class="dash-actions">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="login.html" id="logout-btn">Logout</a>
+    </div>
+  </header>
+
+  <div class="profile-avatar" id="profile-avatar">👤</div>
+  <div class="profile-name" id="profile-name-display">–</div>
+  <div class="profile-email" id="profile-email-display">–</div>
+
+  <div class="profile-form">
+    <label style="font-size:0.8rem;font-weight:700;color:#666;">Full Name</label>
+    <input class="profile-input" type="text" id="pf-name" placeholder="Your name"/>
+    <label style="font-size:0.8rem;font-weight:700;color:#666;">Email</label>
+    <input class="profile-input" type="email" id="pf-email" placeholder="Your email"/>
+    <label style="font-size:0.8rem;font-weight:700;color:#666;">Phone</label>
+    <input class="profile-input" type="tel" id="pf-phone" placeholder="Your phone"/>
+    <div class="success-msg" id="pf-success"></div>
+    <button class="save-btn" id="save-profile-btn">Save Changes</button>
+  </div>
+
+  <footer class="dash-footer" style="margin-top:32px;">
+    <div class="footer-content">
+      <div class="footer-app-name">Education App</div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/educationapp12" class="social-item" target="_blank">
+          <i class="fab fa-facebook-f social-icon"></i>
+          <span class="social-label">Facebook</span>
+        </a>
+        <div class="footer-divider"></div>
+        <a href="https://twitter.com/educationapp12" class="social-item" target="_blank">
+          <i class="fab fa-twitter social-icon"></i>
+          <span class="social-label">Twitter</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function sanitize(str) {
+      const d = document.createElement('div');
+      d.textContent = str;
+      return d.innerHTML;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const session = JSON.parse(sessionStorage.getItem('edu_user') || 'null');
+      if (!session) { window.location.href = 'login.html'; return; }
+
+      document.getElementById('profile-name-display').textContent = session.name || '–';
+      document.getElementById('profile-email-display').textContent = session.email || '–';
+      document.getElementById('pf-name').value = session.name || '';
+      document.getElementById('pf-email').value = session.email || '';
+      document.getElementById('pf-phone').value = session.phone || '';
+
+      document.getElementById('save-profile-btn').addEventListener('click', () => {
+        const name = sanitize(document.getElementById('pf-name').value.trim());
+        const email = sanitize(document.getElementById('pf-email').value.trim());
+        const phone = sanitize(document.getElementById('pf-phone').value.trim());
+
+        // Update session
+        const updated = { ...session, name, email, phone };
+        sessionStorage.setItem('edu_user', JSON.stringify(updated));
+
+        // Update in localStorage users array
+        const users = JSON.parse(localStorage.getItem('edu_users') || '[]');
+        const idx = users.findIndex(u => u.email === session.email);
+        if (idx > -1) { users[idx] = { ...users[idx], name, email, phone }; }
+        localStorage.setItem('edu_users', JSON.stringify(users));
+
+        document.getElementById('profile-name-display').textContent = name;
+        document.getElementById('profile-email-display').textContent = email;
+        document.getElementById('pf-success').textContent = 'Profile updated successfully!';
+        setTimeout(() => { document.getElementById('pf-success').textContent = ''; }, 2500);
+      });
+
+      document.getElementById('logout-btn').addEventListener('click', (e) => {
+        e.preventDefault();
+        sessionStorage.removeItem('edu_user');
+        window.location.href = 'login.html';
+      });
+    });
+  </script>
+</body>
+</html>

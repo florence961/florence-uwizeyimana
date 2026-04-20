@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Education App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="app-header">
+    <div class="header-logo">
+      <div class="logo-icon">🎓</div>
+      <span class="logo-text">EDUCATION</span>
+    </div>
+    <div class="header-nav">
+      <button class="nav-arrow" onclick="goBack()">←</button>
+      <button class="nav-arrow" onclick="goForward()">→</button>
+    </div>
+  </header>
+
+  <!-- PAGE: WELCOME (slide 1) -->
+  <div class="page active" id="page-welcome">
+    <div class="page-content welcome-page">
+      <h1 class="page-title">welcome</h1>
+      <div class="title-block">
+        <div class="title-bar"></div>
+        <h2 class="app-name">education app</h2>
+        <div class="title-bar"></div>
+      </div>
+      <p class="welcome-text">
+        Our institution is committed to delivering high-quality education that nurtures curiosity, critical thinking, and lifelong learning. We provide a supportive environment where students can develop their skills, discover their talents, and achieve their academic and personal goals.
+      </p>
+    </div>
+  </div>
+
+  <!-- PAGE: MENU (slide 2) -->
+  <div class="page" id="page-menu">
+    <div class="page-content menu-page">
+      <div class="title-block">
+        <div class="title-bar"></div>
+        <h2 class="app-name">education app</h2>
+        <div class="title-bar"></div>
+      </div>
+      <div class="menu-grid">
+        <a href="pages/login.html" class="menu-btn">login</a>
+        <a href="pages/about.html" class="menu-btn">about us</a>
+        <a href="pages/contact.html" class="menu-btn">contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE: ABOUT (slide 3) -->
+  <div class="page" id="page-about">
+    <div class="page-content about-page">
+      <div class="page-label-btn">about us</div>
+      <h3 class="section-link">Programs or Services:</h3>
+      <ul class="services-list">
+        <li>courses</li>
+        <li>Training programs</li>
+        <li>Online learning options</li>
+        <li>Student support services</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PAGE: CONTACT (slide 4) -->
+  <div class="page" id="page-contact">
+    <div class="page-content contact-page">
+      <div class="page-label-btn">contact</div>
+      <div class="contact-list">
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <span>Rwanda-ngoma-kibungo</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">✉️</span>
+          <span>educationa12@gmail.com</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">💬</span>
+          <span>+250793412954</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📘</span>
+          <span>education app</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE: CLOSING (slide 5) -->
+  <div class="page" id="page-closing">
+    <div class="page-content closing-page">
+      <h2 class="app-name" style="margin-bottom:1.5rem;">education app</h2>
+      <p class="welcome-text">
+        As we continue to grow together, we remain committed to empowering minds and creating opportunities through quality education.<br><br>
+        Our mission is to inspire creativity, encourage lifelong learning, prepare every student for a successful future.<br><br>
+        If you have any questions or need support, free to contact us at educationa12@gmail.com<br><br>
+        Stay connected with us on our social media channels for the latest updates and new learning opportunities.
+      </p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="app-footer">
+    <div class="footer-content">
+      <div class="footer-app-name">Education App</div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/educationapp12" class="social-item" target="_blank">
+          <i class="fab fa-facebook-f social-icon"></i>
+          <span class="social-label">Facebook</span>
+        </a>
+        <div class="footer-divider"></div>
+        <a href="https://twitter.com/educationapp12" class="social-item" target="_blank">
+          <i class="fab fa-twitter social-icon"></i>
+          <span class="social-label">Twitter</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
